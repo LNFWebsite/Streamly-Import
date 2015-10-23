@@ -1,5 +1,5 @@
 # Streamly-Import
-Import playlists to Streamly from other services
+Import playlists to [Streamly](https://github.com/LNFWebsite/Streamly) from other services
 
 ## What services can I import from?
 
