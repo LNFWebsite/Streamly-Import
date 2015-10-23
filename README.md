@@ -5,7 +5,7 @@ Import playlists to Streamly from other services
 
 The following services have been supported for playlist importing:
 
-- Streamus (in development)
+- [Streamus](https://streamus.com/) (in development)
 
 ## License
 
