@@ -18,6 +18,7 @@
   $("#streamusUrlInput").on("paste", function() {
     setTimeout(function() {
       window.open($("#streamusURLInput").val() + "/json");
+      $("#streamusJSONInput").focus();
     }, 0);
   });
   </script>
