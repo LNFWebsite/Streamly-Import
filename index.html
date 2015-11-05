@@ -23,8 +23,19 @@
   <script>
   $("#streamusURLInput").on("paste", function() {
     setTimeout(function() {
-      window.open($("#streamusURLInput").val() + "/json");
-      $("#streamusJSONInput").focus();
+      var input = $("#streamusURLInput").val();
+      var regex = /^http(|s):\/\/streamus.com\/share\/playlist\/.*\/.*/i;
+      
+      input = input.trim();
+      input = input.match(regex);
+      
+      if (input !== null) {
+        window.open($("#streamusURLInput").val() + "/json");
+        $("#streamusJSONInput").focus();
+      }
+      else {
+        alert("That doesn't appear to be a valid Streamus playlist\n\nTry copying the URL again");
+      }
     }, 0);
   });
   $("#streamusJSONInput").on("paste", function() {
