@@ -22,6 +22,11 @@
       $("#streamusJSONInput").focus();
     }, 0);
   });
+  $("#streamusJSONInput").on("paste", function() {
+    setTimeout(function() {
+      streamusJSONInput();
+    }, 0);
+  });
   </script>
 </body>
 </html>
