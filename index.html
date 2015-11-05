@@ -30,7 +30,7 @@
       input = input.match(regex);
       
       if (input !== null) {
-        window.open($("#streamusURLInput").val() + "/json");
+        window.open(input[0] + "/json");
         $("#streamusJSONInput").focus();
       }
       else {
