@@ -20,9 +20,10 @@ function streamusJSONInput() {
   }
   
   $("#shareButton").css("display", "initial");
+  $("#voila").css("display", "initial");
   
   var playlist = JSON.stringify(videos);
   playlist = window.btoa(playlist);
-  playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
-  $("#shareButton").attr("data-clipboard-text", playlist);
+  
+  window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
 }
