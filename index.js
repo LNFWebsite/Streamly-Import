@@ -19,6 +19,8 @@ function streamusJSONInput() {
     videos.push(video);
   }
   
+  $("#shareButton").css("display", "initial");
+  
   if (videos.length > 1) {
     var playlist = JSON.stringify(videos);
     playlist = window.btoa(playlist);
