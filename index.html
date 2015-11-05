@@ -11,11 +11,13 @@
   <p>Import playlists to Streamly from other services</p>
   <h2>Streamus</h2>
   <label for="streamusUrlInput">Paste your Streamus Playlist URL:</label>
-  <input type="textbox" id="streamusUrlInput" placeholder="(eg. https://streamus.com/share/playlist/1f9edabfdeb8/tropical_house)" />
+  <input type="textbox" id="streamusURLInput" placeholder="(eg. https://streamus.com/share/playlist/1f9edabfdeb8/tropical_house)" autofocus />
+  <p>Below the "Add to Streamus" button, you should see a bunch of garbled text. Copy ALL of it, and paste it below.</p>
+  <textarea id="streamusJSONInput"></textarea>
   <script>
   $("#streamusUrlInput").on("paste", function() {
     setTimeout(function() {
-      window.open($("#streamusUrlInput").val() + "/json");
+      window.open($("#streamusURLInput").val() + "/json");
     }, 0);
   });
   </script>
