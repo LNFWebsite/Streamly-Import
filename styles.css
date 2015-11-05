@@ -1,5 +1,12 @@
-input[type=textbox] {
-  width: 50%;
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+input, textarea {
+  font-family: 'Roboto', sans-serif;
+}
+#streamusURLInput {
+  width: 25%;
 }
 #streamusJSONInput {
   width: 50%;
