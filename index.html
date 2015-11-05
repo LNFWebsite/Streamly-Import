@@ -18,6 +18,7 @@
   <p>A tab of the Streamus website should open.</p>
   <p>Below the "Add to Streamus" button in the new tab, you should see a bunch of garbled text. Copy ALL of it, and paste it below.</p>
   <textarea id="streamusJSONInput"></textarea>
+  <button id="shareButton" data-clipboard-text="https://lnfwebsite.github.io/Streamly/" onclick="shareButton();" style="display: none;">Copy Streamly playlist to Clipboard</button>
   <script>
   $("#streamusURLInput").on("paste", function() {
     setTimeout(function() {
@@ -30,6 +31,14 @@
       streamusJSONInput();
     }, 0);
   });
+  
+  new Clipboard("#shareButton");
+  function shareButton() {
+    $("#shareButton").text("Playlist copied to clipboard!");
+    setTimeout(function() {
+      $("#shareButton").text("Copy Streamly playlist to Clipboard");
+    }, 2000);
+  }
   </script>
 </body>
 </html>
