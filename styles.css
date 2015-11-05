@@ -1,3 +1,7 @@
 input[type=textbox] {
   width: 50%;
 }
+#streamusJSONInput {
+  width: 50%;
+  height: 200px;
+}
