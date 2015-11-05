@@ -1,9 +1,8 @@
 //! License: MIT Adapted (as stated in the LICENSE file)
-
+var streamusPlaylist;
 function streamusJSONInput() {
   var streamusJSON = $("#streamusJSONInput").val();
-  var streamusPlaylist = JSON.parse(streamusJSON);
-  console.log(streamusPlaylist);
+  streamusPlaylist = JSON.parse(streamusJSON);
   
   var videos = [];
   videos[0] = streamusPlaylist["title"];
