@@ -18,5 +18,14 @@ function streamusJSONInput() {
     
     videos.push(video);
   }
-  console.log(videos);
+  
+  if (videos.length > 1) {
+    var playlist = JSON.stringify(videos);
+    playlist = window.btoa(playlist);
+    playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
+    $("#shareButton").attr("data-clipboard-text", "https://lnfwebsite.github.io/Streamly/#" + playlist);
+  }
+  else {
+    $("#shareButton").attr("data-clipboard-text", "https://lnfwebsite.github.io/Streamly/");
+  }
 }
