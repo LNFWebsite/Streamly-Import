@@ -27,12 +27,10 @@
       var regex = /^http(|s):\/\/streamus.com\/share\/playlist\/.*\/.*/i;
       
       input = input.trim();
-      console.log(input);
       input = input.match(regex);
-      console.log(input);
       
       if (input !== null) {
-        window.open($("#streamusURLInput").val() + "/json");
+        window.open(input[0] + "/json");
         $("#streamusJSONInput").focus();
       }
       else {
