@@ -12,5 +12,12 @@
   <h2>Streamus</h2>
   <label for="streamusUrlInput">Paste your Streamus Playlist URL:</label>
   <input type="textbox" id="streamusUrlInput" placeholder="(eg. https://streamus.com/share/playlist/1f9edabfdeb8/tropical_house)" />
+  <script>
+  $("#streamusUrlInput").on("paste", function() {
+    setTimeout(function() {
+      window.open($("#streamusUrlInput").val() + "/json");
+    }, 0);
+  });
+  </script>
 </body>
 </html>
