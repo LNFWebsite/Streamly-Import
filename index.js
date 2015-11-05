@@ -5,7 +5,7 @@ function streamusJSONInput() {
   try {
     var streamusPlaylist = JSON.parse(streamusJSON);
   } catch (e) {
-    alert("Whoops! It seems that something's wrong with the data you entered\n\nTry copying again");
+    alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
     return false;
   }
   var videos = [];
