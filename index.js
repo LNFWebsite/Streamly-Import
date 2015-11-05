@@ -3,6 +3,7 @@
 function streamusJSONInput() {
   var streamusJSON = $("#streamusJSONInput").val();
   var streamusPlaylist = JSON.parse(streamusJSON);
+  console.log(streamusPlaylist);
   
   var videos = [];
   videos[0] = streamusPlaylist["title"];
