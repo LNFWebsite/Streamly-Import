@@ -24,7 +24,7 @@
   $("#streamusURLInput").on("paste", function() {
     setTimeout(function() {
       var input = $("#streamusURLInput").val();
-      var regex = /^http(|s):\/\/streamus.com\/share\/playlist\/.*\/.*/i;
+      var regex = /^http(|s):\/\/streamus.com\/share\/playlist\/.*\/.*$/i;
       
       input = input.trim();
       input = input.match(regex);
