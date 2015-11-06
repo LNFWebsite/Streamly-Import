@@ -9,14 +9,24 @@ function streamusJSONInput() {
     return false;
   }
   var videos = [];
-  videos[0] = streamusPlaylist["title"];
+  
+  var playlistName = streamusPlaylist["title"];
+  playlistName = playlistName.trim();
+  playlistName = encodeURIComponent(playlistName).replace(/%20/g, " ");
+  
+  videos[0] = playlistName;
   
   var streamusVideos = streamusPlaylist["items"];
   for (i = 0; i < streamusVideos.length; i++) {
     var streamusVideo = streamusVideos[i]["video"];
     
     var video = [];
-    video[0] = streamusVideo["title"];
+    
+    var videoName = streamusVideo["title"];
+    videoName = videoName.trim();
+    videoName = encodeURIComponent(videoName).replace(/%20/g, " ");
+    
+    video[0] = videoName;
     video[1] = streamusVideo["duration"];
     video[2] = streamusVideo["id"];
     
