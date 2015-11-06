@@ -2,8 +2,12 @@
 
 function streamusJSONInput() {
   var streamusJSON = $("#streamusJSONInput").val();
-  var streamusPlaylist = JSON.parse(streamusJSON);
-  
+  try {
+    var streamusPlaylist = JSON.parse(streamusJSON);
+  } catch (e) {
+    alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
+    return false;
+  }
   var videos = [];
   videos[0] = streamusPlaylist["title"];
   
