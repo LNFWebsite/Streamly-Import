@@ -15,8 +15,10 @@
   <p><i>When first using Streamly Import you may need to allow pop-ups. These are used to open your playlists outside of this site. [<a href="https://support.google.com/chrome/answer/95472?hl=en" target="_blank">instructions for Chrome</a> <a href="https://support.mozilla.org/en-US/kb/pop-blocker-settings-exceptions-troubleshooting" target="_blank">and Firefox</a>]</i></p>
   <h2>Streamus</h2>
   <hr>
-  <label for="streamusURLInput">Paste your Streamus Playlist URL:</label>
-  <input type="textbox" id="streamusURLInput" placeholder="(eg. https://streamus.com/share/playlist/1f9edabfdeb8/tropical_house)" autofocus />
+  <form action="javascript:streamusURLInput();" method="get" id="searchForm">
+    <label for="streamusURLInput">Paste your Streamus Playlist URL:</label>
+    <input type="textbox" id="streamusURLInput" placeholder="(eg. https://streamus.com/share/playlist/1f9edabfdeb8/tropical_house)" autofocus />
+  </form>
   <p>A tab of the Streamus website should open.</p>
   <p>Below the "Add to Streamus" button in the new tab, you should see a bunch of garbled text. Copy ALL of it, and paste it below.</p>
   <textarea id="streamusJSONInput"></textarea>
@@ -24,19 +26,7 @@
   <script>
   $("#streamusURLInput").on("paste", function() {
     setTimeout(function() {
-      var input = $("#streamusURLInput").val();
-      var regex = /^http(|s):\/\/streamus.com\/share\/playlist\/.*\/.*$/i;
-      
-      input = input.trim();
-      input = input.match(regex);
-      
-      if (input !== null) {
-        window.open(input[0] + "/json");
-        $("#streamusJSONInput").focus();
-      }
-      else {
-        alert("That doesn't appear to be a valid Streamus playlist\n\nTry copying the URL again");
-      }
+      streamusURLInput();
     }, 0);
   });
   $("#streamusJSONInput").on("paste", function() {
