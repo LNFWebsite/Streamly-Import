@@ -10,7 +10,7 @@ The following services have been supported for playlist importing:
 
 ## How do I use it?
 
-Go to the [website](https://lnfwebsite.github.io/Streamly-Import/).
+Go to the website: https://lnfwebsite.github.io/Streamly-Import/
 
 Or clone us into your web server...
 
