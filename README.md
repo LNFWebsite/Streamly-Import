@@ -5,8 +5,8 @@ Import playlists to [Streamly](https://github.com/LNFWebsite/Streamly) from othe
 
 The following services have been supported for playlist importing:
 
-- [Streamus](https://streamus.com/)
 - [YouTube](https://www.youtube.com/) (in development)
+- [Streamus](https://streamus.com/)
 
 ## License
 
