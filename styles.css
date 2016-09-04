@@ -5,10 +5,10 @@ body {
 input, textarea {
   font-family: 'Roboto', sans-serif;
 }
-#streamusURLInput {
+input {
   width: 25%;
 }
-#streamusJSONInput {
+textarea {
   width: 50%;
   height: 200px;
 }
