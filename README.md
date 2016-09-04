@@ -16,4 +16,4 @@ Or clone us into your web server...
 
 ## License
 
-Streamly-Import is licensed under a modified version of the MIT license (MIT). The same license as Streamly itself.
+Streamly-Import is licensed under the MIT license (MIT). The same license as Streamly itself.
