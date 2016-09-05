@@ -59,9 +59,27 @@ function streamusJSONInput() {
 
 function streamusFileInput() {
   var streamusFile = $("#streamusFileInput").val();
-  var streamusFileData = streamusFile.split("\n");
-  for (var i = 0; i < streamusFileData.length; i++) {
-    streamusFileData[i] = streamusFileData[i].split(",");
+  streamusFile = streamusFile.split("\n");
+  
+  var videos = [];
+  
+  videos[0] = null;
+  
+  for (var i = 0; i < streamusFile.length; i++) {
+    streamusFile[i] = streamusFile[i].split(",");
+    
+    var video = [];
+    video[0] = streamusFile[i][0];
+    video[1] = streamusFile[i][4]+;
+    video[2] = streamusFile[i][1];
+    
+    videos.push(video);
   }
-  console.log(streamusFileData);
+  
+  $("#voila").css("display", "block");
+  
+  var playlist = JSON.stringify(videos);
+  playlist = window.btoa(playlist);
+  
+  window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
 }
