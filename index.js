@@ -1,4 +1,4 @@
-//! License: MIT Adapted (as stated in the LICENSE file)
+//! License: MIT (as stated in the LICENSE file)
 
 function streamusURLInput() {
   var input = $("#streamusURLInput").val();
@@ -55,4 +55,36 @@ function streamusJSONInput() {
   playlist = window.btoa(playlist);
   
   window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
+}
+
+function streamusFileInput() {
+  var streamusFile = $("#streamusFileInput").val();
+  if (/.+?,.+?,.+?,.+?,\d+?/i.test(streamusFile)) {
+    streamusFile = streamusFile.split("\n");
+    
+    var videos = [];
+    
+    videos[0] = null;
+    
+    for (var i = 0; i < streamusFile.length; i++) {
+      streamusFile[i] = streamusFile[i].split(",");
+      
+      var video = [];
+      video[0] = streamusFile[i][0];
+      video[1] = +streamusFile[i][4];
+      video[2] = streamusFile[i][1];
+      
+      videos.push(video);
+    }
+    
+    $("#voila").css("display", "block");
+    
+    var playlist = JSON.stringify(videos);
+    playlist = window.btoa(playlist);
+    
+    window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
+  }
+  else {
+    alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
+  }
 }
