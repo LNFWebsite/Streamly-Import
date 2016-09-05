@@ -1,6 +1,8 @@
 body {
   font-family: 'Roboto', sans-serif;
-  text-align: center;
+}
+h1 {
+  background: orange;
 }
 input, textarea {
   font-family: 'Roboto', sans-serif;
