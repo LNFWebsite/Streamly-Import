@@ -51,12 +51,12 @@ function streamusJSONInput() {
     videos.push(video);
   }
   
-  alert(voila);
-  
   var playlist = JSON.stringify(videos);
   playlist = window.btoa(playlist);
   
   window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
+  
+  alert(voila);
 }
 
 function streamusFileInput() {
@@ -79,12 +79,12 @@ function streamusFileInput() {
       videos.push(video);
     }
     
-    alert(voila);
-    
     var playlist = JSON.stringify(videos);
     playlist = window.btoa(playlist);
     
     window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
+    
+    alert(voila);
   }
   else {
     alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
