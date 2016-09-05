@@ -49,8 +49,6 @@ function streamusJSONInput() {
     videos.push(video);
   }
   
-  $("#voila").css("display", "block");
-  
   var playlist = JSON.stringify(videos);
   playlist = window.btoa(playlist);
   
@@ -76,8 +74,6 @@ function streamusFileInput() {
       
       videos.push(video);
     }
-    
-    $("#voila").css("display", "block");
     
     var playlist = JSON.stringify(videos);
     playlist = window.btoa(playlist);
