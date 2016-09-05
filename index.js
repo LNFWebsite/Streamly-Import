@@ -1,7 +1,5 @@
 //! License: MIT (as stated in the LICENSE file)
 
-var voila = "Voilà! A tab of your playlist in Streamly should have opened!";
-
 function streamusURLInput() {
   var input = $("#streamusURLInput").val();
   var regex = /^http(|s):\/\/streamus.com\/share\/playlist\/.*\/.*$/i;
@@ -55,8 +53,6 @@ function streamusJSONInput() {
   playlist = window.btoa(playlist);
   
   window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
-  
-  alert(voila);
 }
 
 function streamusFileInput() {
@@ -83,8 +79,6 @@ function streamusFileInput() {
     playlist = window.btoa(playlist);
     
     window.open("https://lnfwebsite.github.io/Streamly/#" + playlist);
-    
-    alert(voila);
   }
   else {
     alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
