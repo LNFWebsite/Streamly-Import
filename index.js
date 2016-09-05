@@ -70,7 +70,7 @@ function streamusFileInput() {
     
     var video = [];
     video[0] = streamusFile[i][0];
-    video[1] = streamusFile[i][4]+;
+    video[1] = +streamusFile[i][4];
     video[2] = streamusFile[i][1];
     
     videos.push(video);
