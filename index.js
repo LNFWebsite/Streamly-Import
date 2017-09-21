@@ -2,7 +2,7 @@
 
 // Audius Import functions
 
-function audiusInput(data) {
+function audiusConvert(data) {
   data = JSON.parse(data);
   data = data["entities"];
 
@@ -21,18 +21,30 @@ function audiusInput(data) {
   return videos;
 }
 
-function actionAudiusInput() {
-  var input = $("#audiusInput").val();
-  try {
-    var playlist = audiusInput(input);
-  } catch (e) {
-    alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
-    return false;
+function audiusInput() {
+  function loadPlaylist(input) {
+    try {
+      var playlist = audiusConvert(input);
+      playlist = JSON.stringify(playlist);
+      playlist = window.btoa(playlist);
+      playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
+      window.location.href = playlist;
+    } catch (e) {
+      alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
+      return false;
+    }
   }
-  playlist = JSON.stringify(playlist);
-  playlist = window.btoa(playlist);
-  playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
-  window.location.href = playlist;
+  
+  var input = $("#audiusInput").val();
+  
+  if (input.indexOf("myjson.com") !== -1) {
+    $.get(input, function (data, textStatus, jqXHR) {
+      loadPlaylist(input);
+    });
+  }
+  else {
+    loadPlaylist(input);
+  }
 }
 
 // Streamus Import functions
