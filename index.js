@@ -1,5 +1,21 @@
 //! License: MIT (as stated in the LICENSE file)
 
+function getQueryParams(qs) {
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
+//var query = getQueryParams(document.location.search);
+//alert(query.foo);
+
 // Audius Import functions
 
 function audiusConvert(data) {
@@ -36,8 +52,12 @@ function audiusInput() {
   }
   
   var input = $("#audiusInput").val();
-  
+  https://audius.rockdapus.org/?import=https://api.myjson.com/bins/m7pxt&type=playList&title=PLAYLSIT
   if (input.indexOf("myjson.com") !== -1) {
+    if (input.indexOf("audius.rockdapus.org") !== -1) {
+      var params = getQueryParams(input);
+      console.log(params);
+    }
     $.get(input, function (data, textStatus, jqXHR) {
       loadPlaylist(data);
     }).fail(function() {
