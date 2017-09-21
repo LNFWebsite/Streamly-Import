@@ -46,7 +46,9 @@ function audiusInput() {
     });
   }
   else {
-    input = JSON.parse(input);
+    try {
+      input = JSON.parse(input);
+    } catch(e) {};
     loadPlaylist(input);
   }
 }
