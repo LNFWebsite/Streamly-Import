@@ -107,3 +107,10 @@ function audiusInput(data) {
 
   return videos;
 }
+
+function audiusFileInput() {
+  var audiusFile = $("#audiusFileInput").val();
+  var playlist = audiusInput(audiusFile);
+  playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
+  window.location.href = playlist;
+}
