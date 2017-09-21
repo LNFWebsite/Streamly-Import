@@ -39,7 +39,8 @@ function audiusInput() {
   
   if (input.indexOf("myjson.com") !== -1) {
     $.get(input, function (data, textStatus, jqXHR) {
-      loadPlaylist(input);
+      console.log(data);
+      //loadPlaylist(input);
     });
   }
   else {
