@@ -14,6 +14,9 @@ textarea {
   width: 50%;
   height: 200px;
 }
+h2.audius {
+  background: #2DA7EF;
+}
 h2.streamus {
-  background: lightblue;
+  background: brown;
 }
