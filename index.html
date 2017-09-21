@@ -39,6 +39,11 @@
     <textarea id="streamusFileInput"></textarea>
   </form>
   <script>
+  $("#audiusFileInput").on("paste", function() {
+    setTimeout(function() {
+      audiusFileInput();
+    }, 0);
+  });
   $("#streamusURLInput").on("paste", function() {
     setTimeout(function() {
       streamusURLInput();
