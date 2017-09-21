@@ -18,7 +18,7 @@
   <hr>
   <form action="javascript:audiusFileInput();" method="get">
     <p>Copy the text of your Audius Playlist File and paste it here:</p>
-    <textarea id="audiusFileInput"></textarea>
+    <textarea id="audiusInput"></textarea>
   </form>
   <h2 class="streamus">Streamus</h2>
   <h3>Streamus Playlist URLs</h3>
@@ -39,9 +39,9 @@
     <textarea id="streamusFileInput"></textarea>
   </form>
   <script>
-  $("#audiusFileInput").on("paste", function() {
+  $("#audiusInput").on("paste", function() {
     setTimeout(function() {
-      audiusFileInput();
+      actionAudiusInput();
     }, 0);
   });
   $("#streamusURLInput").on("paste", function() {
