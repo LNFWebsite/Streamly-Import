@@ -1,5 +1,38 @@
 //! License: MIT (as stated in the LICENSE file)
 
+// Audius Import functions
+
+function audiusInput(data) {
+  data = JSON.parse(data);
+  data = data["entities"];
+
+  var videos = [null];
+
+  $.each(data, function(index, value) {
+    var video = [];
+
+    video[0] = encodeURIComponent(value["title"]).replace(/%20/g, " ");
+    video[1] = value["durationS"];
+    video[2] = index;
+
+    videos.push(video);
+  });
+
+  return videos;
+}
+
+function actionAudiusInput() {
+  var input = $("#audiusInput").val();
+  try {
+    var playlist = audiusInput(input);
+  } catch (e) {
+    alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
+    return false;
+  }
+  playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
+  window.location.href = playlist;
+}
+
 // Streamus Import functions
 
 function streamusURLInput() {
@@ -85,32 +118,4 @@ function streamusFileInput() {
   else {
     alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
   }
-}
-
-// Audius Import functions
-
-function audiusInput(data) {
-  //data = JSON.parse(data);
-  data = data["entities"];
-
-  var videos = [null];
-
-  $.each(data, function(index, value) {
-    var video = [];
-
-    video[0] = encodeURIComponent(value["title"]).replace(/%20/g, " ");
-    video[1] = value["durationS"];
-    video[2] = index;
-
-    videos.push(video);
-  });
-
-  return videos;
-}
-
-function audiusFileInput() {
-  var audiusFile = $("#audiusFileInput").val();
-  var playlist = audiusInput(audiusFile);
-  playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
-  window.location.href = playlist;
 }
