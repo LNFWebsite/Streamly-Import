@@ -6,7 +6,7 @@ function audiusConvert(data) {
   data = data["entities"];
   
   var videos = [null];
-  console.log(data);
+  
   $.each(data, function(index, value) {
     var video = [];
 
@@ -22,24 +22,24 @@ function audiusConvert(data) {
 
 function audiusInput() {
   function loadPlaylist(input) {
-    //try {
+    try {
       var playlist = audiusConvert(input);
       playlist = JSON.stringify(playlist);
       playlist = window.btoa(playlist);
       playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
       window.location.href = playlist;
-    //} catch (e) {
-    //  alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
-    //  return false;
-    //}
+    } catch (e) {
+      alert("Whoops, it seems that your playlist didn't load correctly\n\nTry copying again");
+      $("#audiusInput").val("");
+      return false;
+    }
   }
   
   var input = $("#audiusInput").val();
   
   if (input.indexOf("myjson.com") !== -1) {
     $.get(input, function (data, textStatus, jqXHR) {
-      console.log(data);
-      loadPlaylist(input);
+      loadPlaylist(data);
     }).fail(function() {
       alert("Whoops, it seems that your playlist didn't load correctly\n\nTry copying again");
       $("#audiusInput").val("");
