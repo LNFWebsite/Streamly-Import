@@ -1,5 +1,7 @@
 //! License: MIT (as stated in the LICENSE file)
 
+// Streamus Import functions
+
 function streamusURLInput() {
   var input = $("#streamusURLInput").val();
   var regex = /^http(|s):\/\/streamus.com\/share\/playlist\/.*\/.*$/i;
@@ -83,4 +85,25 @@ function streamusFileInput() {
   else {
     alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
   }
+}
+
+// Audius Import functions
+
+function audiusInput(data) {
+  //data = JSON.parse(data);
+  data = data["entities"];
+
+  var videos = [null];
+
+  $.each(data, function(index, value) {
+    var video = [];
+
+    video[0] = encodeURIComponent(value["title"]).replace(/%20/g, " ");
+    video[1] = value["durationS"];
+    video[2] = index;
+
+    videos.push(video);
+  });
+
+  return videos;
 }
