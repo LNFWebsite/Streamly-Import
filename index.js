@@ -7,6 +7,8 @@ var playlistName = null;
 function audiusConvert(data) {
   data = data["entities"];
   
+  console.log(playlistName);
+  
   if (playlistName !== null && playlistName !== "") {
     playlistName = encodeURIComponent(playlistName).replace(/%20/g, " ");
   }
