@@ -4,9 +4,9 @@
 
 function audiusConvert(data) {
   data = data["entities"];
-
+  
   var videos = [null];
-
+  console.log(data);
   $.each(data, function(index, value) {
     var video = [];
 
