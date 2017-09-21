@@ -9,7 +9,10 @@ function audiusConvert(data) {
   
   console.log(playlistName);
   
-  if (playlistName !== null && playlistName !== "") {
+  if (playlistName === undefined) {
+    playlistName = null;
+  }
+  if (playlistName !== null) {
     playlistName = encodeURIComponent(playlistName).replace(/%20/g, " ");
   }
   var videos = [playlistName];
