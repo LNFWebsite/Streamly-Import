@@ -29,6 +29,8 @@ function actionAudiusInput() {
     alert("Whoops, it seems that something's wrong with the data you entered\n\nTry copying again");
     return false;
   }
+  playlist = JSON.stringify(playlist);
+  playlist = window.btoa(playlist);
   playlist = "https://lnfwebsite.github.io/Streamly/#" + playlist;
   window.location.href = playlist;
 }
