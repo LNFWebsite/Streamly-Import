@@ -3,7 +3,6 @@
 // Audius Import functions
 
 function audiusConvert(data) {
-  data = JSON.parse(data);
   data = data["entities"];
 
   var videos = [null];
@@ -40,10 +39,14 @@ function audiusInput() {
   if (input.indexOf("myjson.com") !== -1) {
     $.get(input, function (data, textStatus, jqXHR) {
       console.log(data);
-      //loadPlaylist(input);
+      loadPlaylist(input);
+    }).fail(function() {
+      alert("Whoops, it seems that your playlist didn't load correctly\n\nTry copying again");
+      $("#audiusInput").val("");
     });
   }
   else {
+    input = JSON.parse(input);
     loadPlaylist(input);
   }
 }
