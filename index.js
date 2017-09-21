@@ -9,7 +9,7 @@ function audiusConvert(data) {
   
   console.log(playlistName);
   
-  if (playlistName === undefined) {
+  if (playlistName === "undefined") {
     playlistName = null;
   }
   if (playlistName !== null) {
